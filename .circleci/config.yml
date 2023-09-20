@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/android:api-30
+      - image: cimg/android:2023.09
     working_directory: ~/project
 
     steps:
