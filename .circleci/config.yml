@@ -9,7 +9,7 @@ jobs:
     environment:
       JVM_OPTS: -Xmx2048m
     steps:
-      - checkout
+
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       #      - run:
