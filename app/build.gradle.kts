@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.meetingroom"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.meetingroom"
         minSdk = 25
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -50,6 +50,8 @@ android {
 }
 
 dependencies {
+    // Stream video Compose SDK
+    implementation("io.getstream:stream-video-android-compose:0.3.2")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

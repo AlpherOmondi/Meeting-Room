@@ -46,6 +46,10 @@ google-services.json
 
 # Android Profiling
 *.hprof
-#keys
-key.pub
+<<<<<<< HEAD
+
+
+# circle ci keys
 key
+key.pub
+>>>>>>> 8a7f240c1d12cba0379d1568ee82cf0bdf684005
