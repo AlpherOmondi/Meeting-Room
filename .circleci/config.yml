@@ -13,9 +13,7 @@ jobs:
       #      - run:
       #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
       #         command: sudo chmod +x ./gradlew
-      - run:
-          name: Download Dependencies
-          command: ./gradlew build
+      - run: echo "Hello there! Keep up the great work on your project!"
 
       - run:
           name: Run Tests
