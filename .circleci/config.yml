@@ -15,7 +15,7 @@ jobs:
       #         command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
-          command: ./gradlew
+          command: ./gradlew build
 
       - run:
           name: Run Tests
