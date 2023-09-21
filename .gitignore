@@ -46,5 +46,3 @@ google-services.json
 
 # Android Profiling
 *.hprof
-key
-key.pub
