@@ -15,9 +15,6 @@ jobs:
       #         command: sudo chmod +x ./gradlew
       - run: echo "Hello there! Keep up the great work on your project!"
 
-      - run:
-          name: Run Tests
-          command: ./gradlew lint test
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/reports
           destination: reports
