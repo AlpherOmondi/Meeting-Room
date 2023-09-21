@@ -1,24 +1,23 @@
 version: 2.1
-
+orbs:
+  android: circleci/android@0.2.0
 jobs:
   build:
+    working_directory: ~/code
     docker:
       - image: cimg/android:2023.09
-    working_directory: ~/project
-
+    environment:
+      JVM_OPTS: -Xmx2048m
     steps:
-      - checkout
 
-      - run:
-          name: Install Dependencies
-          command: ./gradlew dependencies
+      #      - run:
+      #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+      #         command: sudo chmod +x ./gradlew
+      - run: echo "Hello there! Keep up the great work on your project!"
 
-      - run:
-          name: Build and Test
-          command: ./gradlew build test
-
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: app/build/reports
+          destination: reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: app/build/test-results
+      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
