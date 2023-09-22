@@ -3,44 +3,35 @@ package com.example.meetingroom
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.meetingroom.ui.theme.MeetingRoomTheme
+import io.getstream.video.android.core.StreamVideoBuilder
+import io.getstream.video.android.model.User
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialize variables
+        val apiKey = "wdmunyg7y679"
+        val userId = ""
+        val userToken = ""
+        val callId = ""
+
+        // Initializing streamVideo.
+        val client = StreamVideoBuilder(
+            context = applicationContext,
+            apiKey = apiKey,
+            user = User(
+                id = userId,
+                name = "Meeting room",
+                role = "admin",
+            ),
+            token = userToken,
+        ).build()
+
+
+
         setContent {
-            MeetingRoomTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MeetingRoomTheme {
-        Greeting("Android")
     }
 }
